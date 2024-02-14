@@ -36,8 +36,13 @@ BUILD_PRX = 1
 PSPSDK=$(shell psp-config --pspsdk-path)
 include $(PSPSDK)/lib/build.mak
 
+release: all
+	@mkdir -p PSP/GAME/Wallpaper_Dumper
+	@cp EBOOT.PBP PSP/GAME/Wallpaper_Dumper/
+	@zip -r Wallpaper_Dumper.zip PSP/
+
 clean:
-	@rm -rf $(TARGET)* prefix data.psp
+	@rm -rf $(TARGET)* prefix data.psp PSP *.zip *.o *.PBP *.SFO
 	@echo Cleaned
 
 
