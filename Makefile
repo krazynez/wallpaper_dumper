@@ -14,7 +14,7 @@ else
 	$(shell pwd)\bin\prxEncrypter $(TARGET).prx
 endif
 	#pack-pbp $(EXTRA_TARGETS) PARAM.SFO icon0.png NULL pic0.png NULL NULL data.psp NULL
-	pack-pbp $(EXTRA_TARGETS) PARAM.SFO NULL NULL NULL NULL NULL data.psp NULL
+	pack-pbp $(EXTRA_TARGETS) PARAM.SFO .res/icon0.png NULL NULL NULL NULL data.psp NULL
 
 INCDIR = ./inc
 CFLAGS = -O2 -G0 -Wall
