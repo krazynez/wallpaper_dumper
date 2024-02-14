@@ -5,3 +5,5 @@
 * Copy `PSP` folder to root of memory stick, launch `Wallpaper Dumper`
 
 * Dump will be saved to `ms0:/PSP/PHOTO/WALLPAPER.BMP`
+
+<video src=".res/wallpaper_dumper.webm" width="500">
