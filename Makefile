@@ -25,10 +25,10 @@ LIBDIR = ./lib
 #LIBS = 
 LDFLAGS = -L.
 
-LIBS = -lpspexploit -lpsprtc -lpspdebug
+LIBS = -lpspexploit -lpsprtc
 
 
-PSP_FW_VERSION = 280
+PSP_FW_VERSION = 660
 
 BUILD_PRX = 1
 
@@ -39,7 +39,7 @@ include $(PSPSDK)/lib/build.mak
 release: all
 	@mkdir -p PSP/GAME/Wallpaper_Dumper
 	@cp EBOOT.PBP PSP/GAME/Wallpaper_Dumper/
-	@zip -r Wallpaper_Dumper.zip PSP/
+	@zip -r Wallpaper_Dumper.zip PSP/ README.md
 
 clean:
 	@rm -rf $(TARGET)* prefix data.psp PSP *.zip *.o *.PBP *.SFO
