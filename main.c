@@ -47,6 +47,10 @@ void dump() {
 	printf("Dumping wallpaper.bmp to ms0:/psp/photo/wallpaper.bmp ....");	
 	k_tbl->KernelDelayThread(4000000);
 	SceUID fd = k_tbl->KernelIOOpen("ms0:/psp/photo/wallpaper.bmp", PSP_O_CREAT | PSP_O_WRONLY | PSP_O_TRUNC, 0777);
+	if(fd<0) {
+		k_tbl->KernelIOMkdir("ms0:/psp/photo", 0777);
+		fd = k_tbl->KernelIOOpen("ms0:/psp/photo/wallpaper.bmp", PSP_O_CREAT | PSP_O_WRONLY | PSP_O_TRUNC, 0777);
+	}
 	while((read = k_tbl->KernelIORead(wallpaper, buf, 512))>0)
 		k_tbl->KernelIOWrite(fd, buf, sizeof(buf));
 
